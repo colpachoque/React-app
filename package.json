@@ -1,9 +1,10 @@
 {
-  "name": "react",
+  "name": "react-app",
   "version": "1.0.0",
   "description": "pet project on reactjs",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,8 +20,20 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.1.2",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "jest": "^24.5.0",
+    "react": "^16.8.4",
+    "react-redux": "^6.0.1",
+    "react-router": "^4.4.0",
+    "redux": "^4.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
   "keywords": []
 }
