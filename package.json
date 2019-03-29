@@ -1,10 +1,12 @@
 {
-  "name": "react",
+  "name": "react-app",
   "version": "1.0.0",
   "description": "pet project on reactjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --open --env.dev",
+    "build": "webpack --env.prod",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,10 +19,35 @@
   },
   "homepage": "https://github.com/colpachoque/React-app#readme",
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.1.2",
-    "express": "^4.16.4"
+    "css-loader": "^2.1.1",
+    "express": "^4.16.4",
+    "jest": "^24.5.0",
+    "react": "^16.8.4",
+    "react-css-modules": "^4.7.9",
+    "react-dom": "^16.8.4",
+    "react-redux": "^6.0.1",
+    "react-router": "^4.4.0",
+    "react-scripts": "^2.1.8",
+    "redux": "^4.0.1",
+    "style-loader": "^0.23.1",
+    "webpack-merge": "^4.2.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^3.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-config-utils": "^2.3.1",
+    "webpack-dev-server": "^3.2.1"
+  },
   "keywords": []
 }
