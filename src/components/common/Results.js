@@ -7,12 +7,14 @@ import Radio from '@material-ui/core/Radio';
 import styles from '../Header.css';
 
 const Results = (props) => (
-    <div>
-        <div>
-            {props.reultsCount}
-        </div>
-        <div>
-            Sort by
+    <div className={styles.results}>
+        <div className={styles.resultsContainer}>    
+            <div className={styles.resultsInfo}>
+                {props.info}
+            </div>
+            <div className={styles.resultsSort}>
+                Sort by
+            </div>
         </div>
     </div>
 );

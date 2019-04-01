@@ -14,25 +14,33 @@ const Search = (props) => (
         <div>
             <TextField
                 value={props.value}
+                style={{width: '100%'}}
                 onChange={({ target }) => props.onChange(target.value)}
             />
         </div>
-        <div>
-            SEARCH BY
-            <RadioGroup>
-                <FormControlLabel
-                    value="title"
-                    control={<Radio color="primary" />}
-                    label="Title"
-                    labelPlacement="start"
-                />
-                <FormControlLabel
-                    value="genre"
-                    control={<Radio color="primary" />}
-                    label="Genre"
-                    labelPlacement="start"
-                />
-            </RadioGroup>
+        <div className={styles.searchBySection}>
+            <div className={styles.searchByLabel}>
+                SEARCH BY
+            </div>
+            <div className={styles.radioGroup}>
+                <RadioGroup 
+                    row
+                    value={props.searchBy}
+                    onChange={({ target }) => props.onSearchFilterChange(target.value)}>
+                    <FormControlLabel
+                        value="title"
+                        control={<Radio color="primary" />}
+                        label="Title"
+                        labelPlacement="start"
+                    />
+                    <FormControlLabel
+                        value="genre"
+                        control={<Radio color="primary" />}
+                        label="Genre"
+                        labelPlacement="start"
+                    />
+                </RadioGroup>
+            </div>
             <Button>Search</Button>
         </div>
     </div>

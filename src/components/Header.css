@@ -8,5 +8,41 @@
 }
 
 .search {
+    width: 40%;
     margin: 0 auto;
+}
+
+.searchBySection {
+    display: flex;
+}
+
+.radioGroup {
+    width: 80%;
+}
+
+.searchByLabel {
+    position: relative;
+    top: 10px;
+}
+
+.results {
+    background-color: wheat;
+    color: #b27bdb;
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+}
+
+.resultsContainer {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.resultsInfo {
+    width: 60%;
+}
+
+.resultsSort {
+    width: 40%;
 }

@@ -1,11 +1,12 @@
 import React from 'react';
-import FormContainer from '../FormContainer';
 import Header from './Header';
+import Footer from './Footer';
+import MainPage from './MainPage';
 
 let App = () => (
     <>
         <Header/>
-            <FormContainer/>
+            <MainPage/>
         <Footer/>
     </>);
 
