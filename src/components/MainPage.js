@@ -2,46 +2,10 @@ import React from 'react';
 import styles from './MainPage.css';
 import MovieCard from './MovieCard';
 
-const movies = [
-    {
-        name: 'Kill Bill',
-        genre: 'Action and adventure',
-        year: 2004
-    },
-    {
-        name: 'Kill Bill',
-        genre: 'Action and adventure',
-        year: 2004
-    }, 
-    {
-        name: 'Kill Bill',
-        genre: 'Action and adventure',
-        year: 2004
-    }, 
-    {
-        name: 'Kill Bill',
-        genre: 'Action and adventure',
-        year: 2004
-    },
-    {
-        name: 'Kill Bill',
-        genre: 'Action and adventure',
-        year: 2004
-    },
-    {
-        name: 'Kill Bill',
-        genre: 'Action and adventure',
-        year: 2004
-    },
-    {
-        name: 'Kill Bill',
-        genre: 'Action and adventure',
-        year: 2004
-    }
-];
 
 class MainPage extends React.Component {
     render () {
+        const { movies } = this.props;
         return (
             <div className={styles.container}>
                 {movies.length 
