@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Footer.css';
-import Copyright from './common/Copyright';
+import Copyright from '../common/Copyright';
 
 const Footer = (props) => (
             <footer className={styles.footer}>

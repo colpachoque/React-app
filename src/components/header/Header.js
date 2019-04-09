@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './Header.css';
-import Search from './common/Search';
-import MovieDetails from './MovieDetails';
-import Copyright from './common/Copyright';
-import Results from './common/Results';
+import Search from '../common/Search';
+import MovieDetails from '../movie-details/MovieDetails';
+import Copyright from '../common/Copyright';
+import Results from '../common/Results';
 
 const movie = {
     name: 'Kill Bill',

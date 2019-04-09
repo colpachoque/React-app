@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './MainPage.css';
-import MovieCard from './MovieCard';
+import MovieCard from '../movie-card/MovieCard';
 
 const movies = [
     {

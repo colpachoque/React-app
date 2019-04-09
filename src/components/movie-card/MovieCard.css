@@ -5,7 +5,7 @@
 .movieImg {
     width: 150px;
     height: 200px;
-    background-image: url('../../resources/killBill.png');
+    background-image: url('../../../resources/killBill.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
