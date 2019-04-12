@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('html-webpack-plugin');
 
 module.exports = env => {
-
     console.log(env);
     return {
         context: path.join(__dirname, 'src'),
@@ -13,17 +12,17 @@ module.exports = env => {
 
         output: {
             filename: 'bundle.js',
-            path: path.join(__dirname, 'dist')
+            path: path.join(__dirname, 'dist'),
         },
 
         resolve: {
-            extensions: ['.js', '.jsx']
+            extensions: ['.js', '.jsx'],
         },
 
         plugins: [
             new HtmlWebpackPlugin({
-                template: './index.html'
-            })
+                template: './index.html',
+            }),
         ],
 
         module: {
@@ -32,40 +31,41 @@ module.exports = env => {
                     test: /\.(js|jsx)$/,
                     exclude: /(node_modules)/,
                     use: {
-                        loader: 'babel-loader'
-                    }
+                        loader: 'babel-loader',
+                    },
                 },
                 {
                     test: /\.html$/,
                     use: [
                         {
-                            loader: "html-loader"
-                        }
-                    ]
+                            loader: 'html-loader',
+                        },
+                    ],
                 },
                 {
                     test: /\.css$/,
-                    loader: 'style-loader'
-                }, {
+                    loader: 'style-loader',
+                },
+                {
                     test: /\.css$/,
                     loader: 'css-loader',
                     query: {
                         modules: true,
-                        localIdentName: '[name]__[local]___[hash:base64:5]'
-                    }
+                        localIdentName: '[name]__[local]___[hash:base64:5]',
+                    },
                 },
                 {
                     test: /\.(png|jpg|gif)$/,
                     use: [
-                      {
-                        loader: 'file-loader',
-                        options: {},
-                      },
+                        {
+                            loader: 'file-loader',
+                            options: {},
+                        },
                     ],
-                  },
-            ]
+                },
+            ],
         },
 
-        watch: env.dev
-    }
+        watch: env.dev,
+    };
 };

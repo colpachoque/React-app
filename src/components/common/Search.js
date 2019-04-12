@@ -6,27 +6,26 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Radio from '@material-ui/core/Radio';
 import styles from '../header/Header.css';
 
-const Search = (props) => (
+const Search = props => (
     <div className={styles.search}>
-        <div>
-            {props.label}
-        </div>
+        <div>{props.label}</div>
         <div>
             <TextField
                 value={props.value}
-                style={{width: '100%'}}
+                style={{ width: '100%' }}
                 onChange={({ target }) => props.onChange(target.value)}
             />
         </div>
         <div className={styles.searchBySection}>
-            <div className={styles.searchByLabel}>
-                SEARCH BY
-            </div>
+            <div className={styles.searchByLabel}>SEARCH BY</div>
             <div className={styles.radioGroup}>
-                <RadioGroup 
+                <RadioGroup
                     row
                     value={props.searchBy}
-                    onChange={({ target }) => props.onSearchFilterChange(target.value)}>
+                    onChange={({ target }) =>
+                        props.onSearchFilterChange(target.value)
+                    }
+                >
                     <FormControlLabel
                         value="title"
                         control={<Radio color="primary" />}
