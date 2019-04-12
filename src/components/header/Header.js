@@ -1,50 +1,35 @@
 import React from 'react';
 import styles from './Header.css';
 import Search from '../common/Search';
-import MovieDetails from '../movie-details/MovieDetails';
 import Copyright from '../common/Copyright';
 import Results from '../common/Results';
 
-const movie = {
-    name: 'Kill Bill',
-    year: 2004,
-    genre: 'Adventure',
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-        ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-        deserunt mollit anim id est laborum.`,
-    duration: 150,
-    rating: 8
-}
 class Header extends React.Component {
     state = {
-      searchText: '',
-      searchBy: 'title'
-    }
+        searchText: '',
+        searchBy: 'title',
+    };
 
-    onSearchChange = v => {
-        this.setState({ searchText: v})
-    }
+    onSearchChange = searchValue => {
+        this.setState({ searchText: searchValue });
+    };
 
-    onSearchFilterChange = v => {
-        this.setState({ searchBy: v })
-    }
+    onSearchFilterChange = filterValue => {
+        this.setState({ searchBy: filterValue });
+    };
 
-    render () {
+    render() {
         return (
             <header className={styles.header}>
-                <Copyright/>
-                <Search 
+                <Copyright />
+                <Search
                     label={'FIND YOUR MOVIE'}
-                    value={this.state.searchText} 
-                    searchBy={this.state.searchBy} 
+                    value={this.state.searchText}
+                    searchBy={this.state.searchBy}
                     onChange={this.onSearchChange}
-                    onSearchFilterChange={this.onSearchFilterChange}/>
-                {/* <MovieDetails movie={movie}/>                     */}
-                <Results info={'10 films found'}/>
+                    onSearchFilterChange={this.onSearchFilterChange}
+                />
+                <Results info={'10 films found'} />
             </header>
         );
     }
