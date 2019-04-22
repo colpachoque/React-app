@@ -5,5 +5,6 @@ module.exports = {
   },
   setupFiles: ["<rootDir>/enzyme.config.js"],
   collectCoverageFrom: ["src/**/*.{js,jsx,mjs}"],
-  coverageDirectory: "coverage"
+  coverageDirectory: "coverage",
+  snapshotSerializers: ["enzyme-to-json/serializer"]
 };

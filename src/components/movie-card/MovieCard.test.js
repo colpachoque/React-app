@@ -1,6 +1,7 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 import { shallow, mount } from "enzyme";
+import toJson from "enzyme-to-json";
 
 describe("Movie Card component", () => {
   let movie;
@@ -17,7 +18,7 @@ describe("Movie Card component", () => {
     const component = shallow(
       <MovieCard name={movie.name} genre={movie.genre} year={movie.year} />
     );
-    expect(component).toMatchSnapshot();
+    expect(toJson(component)).toMatchSnapshot();
   });
 
   it("should render correct year", () => {

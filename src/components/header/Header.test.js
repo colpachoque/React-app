@@ -1,8 +1,8 @@
 import React from "react";
-import MainPage from "./MainPage";
+import Header from "./Header";
 import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
-describe("Main Page component", () => {
+describe("Header component", () => {
   let movie;
 
   beforeAll(() => {
@@ -14,9 +14,7 @@ describe("Main Page component", () => {
   });
 
   it("should be render correctly", () => {
-    const component = shallow(
-      <MainPage name={movie.name} genre={movie.genre} year={movie.year} />
-    );
+    const component = shallow(<Header />);
     expect(toJson(component)).toMatchSnapshot();
   });
 });
