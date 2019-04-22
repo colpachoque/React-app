@@ -1,0 +1,33 @@
+.movieCard {
+    margin: 50px;
+}
+
+.movieImg {
+    width: 150px;
+    height: 200px;
+    background-image: url('../../../resources/killBill.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.movieInfo {
+    width: 150px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.name {
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 50%;
+}
+
+.genre {
+    width: 100%;
+    font-size: small;
+}
+
+.year {
+    text-align: right;
+    width: 50%;
+}

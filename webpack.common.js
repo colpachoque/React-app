@@ -7,18 +7,18 @@ module.exports = {
 
     output: {
         filename: 'bundle.js',
-        path: path.join(__dirname, 'dist')
+        path: path.join(__dirname, 'dist'),
     },
 
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx'],
     },
 
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html',
-            filename: './index.html'
-        })
+            filename: './index.html',
+        }),
     ],
 
     module: {
@@ -27,17 +27,17 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /(node_modules)/,
                 use: {
-                    loader: 'babel-loader'
-                }
+                    loader: 'babel-loader',
+                },
             },
             {
                 test: /\.html$/,
                 use: [
                     {
-                        loader: "html-loader"
-                    }
-                ]
-            }
-        ]
-    }
+                        loader: 'html-loader',
+                    },
+                ],
+            },
+        ],
+    },
 };
