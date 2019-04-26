@@ -1,25 +1,28 @@
 import React from "react";
 import styles from "./MainPage.css";
 import MovieCard from "../movie-card/MovieCard";
-import { movies } from "../const/const";
+import { getAllMovies } from "../../actions/movies.action";
+import { connect } from "react-redux";
 
 class MainPage extends React.Component {
-  state = {
-    movies: movies
-  };
+  componentDidMount() {
+    this.props.getAllMovies();
+  }
 
   render() {
-    console.log(this.props.search);
+    console.log(this.props.movies);
     return (
       <div className={styles.container}>
-        {this.state.movies.length
-          ? movies
-              .filter(m => m.name.includes(this.props.search))
-              .map((movie, index) => (
+        {this.props.movies
+          ? this.props.movies
+              .filter(m =>
+                m.title.toLowerCase().includes(this.props.search.toLowerCase())
+              )
+              .map(movie => (
                 <MovieCard
-                  key={index}
-                  name={movie.name}
-                  genre={movie.genre}
+                  key={movie.id}
+                  name={movie.title}
+                  genre={movie.genres}
                   year={movie.year}
                 />
               ))
@@ -29,4 +32,10 @@ class MainPage extends React.Component {
   }
 }
 
-export default MainPage;
+const mapStateToProps = ({ movies = [] }) => {
+  return movies;
+};
+export default connect(
+  mapStateToProps,
+  { getAllMovies }
+)(MainPage);
