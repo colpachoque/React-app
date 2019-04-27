@@ -22,7 +22,7 @@ export const loadError = error => ({
 export const getMovie = id => dispatch => {
   getMovieById(id)
     .then(movie => {
-      dispatch(loadMovieByIdSuccess(movie));
+      dispatch(loadMovieByIdSuccess({ movie: movie, genre: movie.genres[0] }));
     })
     .catch(error => dispatch(loadError(error)));
 };

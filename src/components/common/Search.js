@@ -5,7 +5,7 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Radio from "@material-ui/core/Radio";
 import styles from "../header/Header.css";
-
+import { withRouter } from "react-router-dom";
 const Search = props => (
   <div className={styles.search}>
     <div>{props.label}</div>
@@ -38,9 +38,16 @@ const Search = props => (
           />
         </RadioGroup>
       </div>
-      <Button onClick={() => props.onSearch()}>Search</Button>
+      <Button
+        onClick={() => {
+          props.location.search = `?search=${props.value}`;
+          return props.onSearch();
+        }}
+      >
+        Search
+      </Button>
     </div>
   </div>
 );
 
-export default Search;
+export default withRouter(Search);
