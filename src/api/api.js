@@ -1,5 +1,3 @@
-import { post, getText, getJSON, deleteRequest } from "./fetchHelpers";
-
 const prefix = "http://reactjs-cdp.herokuapp.com";
 const headers = new Headers();
 headers.append("Content-Type", "application/json");
