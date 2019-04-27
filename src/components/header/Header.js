@@ -3,9 +3,16 @@ import styles from "./Header.css";
 import Search from "../common/Search";
 import Copyright from "../common/Copyright";
 import Results from "../common/Results";
+import MovieDetails from "../movie-details/MovieDetails";
 import { updateSearchBy, searchInit } from "../../actions/search.action";
 import { connect } from "react-redux";
-
+import {
+  HashRouter as Router,
+  Route,
+  Link,
+  Switch,
+  withRouter
+} from "react-router-dom";
 class Header extends React.Component {
   state = {
     searchText: ""
@@ -26,15 +33,20 @@ class Header extends React.Component {
   render() {
     return (
       <header className={styles.header}>
-        <Copyright />
-        <Search
-          label={"FIND YOUR MOVIE"}
-          value={this.state.searchText}
-          searchBy={this.props.searchBy}
-          onChange={this.onSearchChange}
-          onSearch={this.onSearch}
-          onSearchFilterChange={this.onSearchFilterChange}
-        />
+        {!this.props.location.pathname.includes("/movie/") && (
+          <>
+            <Copyright />
+            <Search
+              label={"FIND YOUR MOVIE"}
+              value={this.state.searchText}
+              searchBy={this.props.searchBy}
+              onChange={this.onSearchChange}
+              onSearch={this.onSearch}
+              onSearchFilterChange={this.onSearchFilterChange}
+            />
+          </>
+        )}
+        <Route exact path="/movie/:id" component={MovieDetails} />
         <Results info={`${this.props.moviesFound} films found`} />
       </header>
     );
@@ -44,7 +56,9 @@ class Header extends React.Component {
 const mapStateToProps = ({ search: { searchBy, moviesFound } }) => {
   return { searchBy, moviesFound };
 };
-export default connect(
-  mapStateToProps,
-  { updateSearchBy, searchInit }
-)(Header);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { updateSearchBy, searchInit }
+  )(Header)
+);

@@ -34,6 +34,7 @@ class MainPage extends React.Component {
               })
               .map(movie => (
                 <MovieCard
+                  movieId={movie.id}
                   key={movie.id}
                   name={movie.title}
                   genre={movie.genres}

@@ -2,8 +2,11 @@ import React from "react";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import MainPage from "./main-page/MainPage";
-import MovieDetails from "./movie-details/MovieDetails";
 import ErrorBoundary from "./common/ErrorBoundary";
+import { HashRouter as Router, Route, Link, Switch } from "react-router-dom";
+import NotFound from "./not-found/NotFound";
+import SameMoviesByGenre from "./same-movies/SameMoviesByGenre";
+import styles from "./App.css";
 
 class App extends React.Component {
   state = {
@@ -15,14 +18,20 @@ class App extends React.Component {
 
   render() {
     return (
-      <>
+      <Router>
         <ErrorBoundary>
           <Header moviesFound={this.state.moviesFound} />
-          <MainPage updateFoundMovies={this.updateFoundMovies} />
-          {/* <MovieDetails /> */}
+
+          <div className={styles.container}>
+            <Switch>
+              <Route exact path="/" component={MainPage} />
+              <Route exact path="/movie/:id" component={SameMoviesByGenre} />
+              <Route exact path="*" component={NotFound} />
+            </Switch>
+          </div>
           <Footer />
         </ErrorBoundary>
-      </>
+      </Router>
     );
   }
 }

@@ -3,15 +3,18 @@ import styles from "./MovieDetails.css";
 import { Button } from "@material-ui/core";
 import { connect } from "react-redux";
 import { getMovie } from "../../actions/movies.action";
-
+import { HashRouter as Router, Route, NavLink, Switch } from "react-router-dom";
 class MovieDetails extends React.Component {
+  componentDidUpdate() {
+    this.props.getMovie(this.props.match.params.id);
+  }
+
   componentDidMount() {
-    this.props.getMovie(240);
+    this.props.getMovie(this.props.match.params.id);
   }
 
   render() {
     const { movie } = this.props;
-    console.log(this.props);
     return (
       <>
         {this.props.movie && (
@@ -26,7 +29,9 @@ class MovieDetails extends React.Component {
               <div className={styles.description}>{movie.description}</div>
             </div>
             <div>
-              <Button>Search</Button>
+              <Button>
+                <NavLink to="/">Search</NavLink>
+              </Button>
             </div>
           </div>
         )}
@@ -35,7 +40,7 @@ class MovieDetails extends React.Component {
   }
 }
 
-const mapStateToProps = ({ movie }) => {
+const mapStateToProps = ({ movies: { movie } }) => {
   return { movie };
 };
 export default connect(
