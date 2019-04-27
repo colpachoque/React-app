@@ -7,20 +7,19 @@ import ErrorBoundary from "./common/ErrorBoundary";
 
 class App extends React.Component {
   state = {
-    searchText: ""
+    moviesFound: 0
   };
-
-  onSearch = searchText => this.setState({ searchText });
-
-  componentDidMount() {}
+  updateFoundMovies = moviesFound => {
+    this.setState({ moviesFound });
+  };
 
   render() {
     return (
       <>
         <ErrorBoundary>
-          <Header onSearch={this.onSearch} />
-          {/*<MainPage search={this.state.searchText}/>*/}
-          <MovieDetails />
+          <Header moviesFound={this.state.moviesFound} />
+          <MainPage updateFoundMovies={this.updateFoundMovies} />
+          {/* <MovieDetails /> */}
           <Footer />
         </ErrorBoundary>
       </>

@@ -25,13 +25,5 @@ describe("Search component", () => {
     const component = shallow(
       <Search label={"Tracker"} value={""} searchBy={"title"} />
     );
-
-    // expect(component.prop('label')).toEqual('Tracker');
-    console.log(component.find(".abc"));
-    // component.find('input').simulate('change', {
-    //     target: {value: 'hello'}
-    // });
-
-    // expect(component.find('input').props().value).toEqual('hello')
   });
 });
