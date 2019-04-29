@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should be render correctly 1`] = `
+<header
+  className="header"
+>
+  <Copyright />
+  <Search
+    label="FIND YOUR MOVIE"
+    onChange={[Function]}
+    onSearch={[Function]}
+    onSearchFilterChange={[Function]}
+    searchBy="title"
+    value=""
+  />
+  <Results
+    info="10 films found"
+  />
+</header>
+`;

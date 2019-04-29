@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1555951024904" clover="3.2.0">
+  <project timestamp="1555951024905" name="All files">
+    <metrics statements="31" coveredstatements="19" conditionals="4" coveredconditionals="1" methods="20" coveredmethods="10" elements="55" coveredelements="30" complexity="0" loc="31" ncloc="31" packages="8" files="11" classes="11"/>
+    <package name="components">
+      <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="App.js" path="C:\Users\olga_peredrii\Work\Sandbox\React\src\components\App.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.common">
+      <metrics statements="13" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="8" coveredmethods="3"/>
+      <file name="Copyright.js" path="C:\Users\olga_peredrii\Work\Sandbox\React\src\components\common\Copyright.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+      <file name="ErrorBoundary.js" path="C:\Users\olga_peredrii\Work\Sandbox\React\src\components\common\ErrorBoundary.js">
+        <metrics statements="4" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+      </file>
+      <file name="Results.js" path="C:\Users\olga_peredrii\Work\Sandbox\React\src\components\common\Results.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+      <file name="Search.js" path="C:\Users\olga_peredrii\Work\Sandbox\React\src\components\common\Search.js">
+        <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.const">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="const.js" path="C:\Users\olga_peredrii\Work\Sandbox\React\src\components\const\const.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.footer">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Footer.js" path="C:\Users\olga_peredrii\Work\Sandbox\React\src\components\footer\Footer.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.header">
+      <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
+      <file name="Header.js" path="C:\Users\olga_peredrii\Work\Sandbox\React\src\components\header\Header.js">
+        <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.main-page">
+      <metrics statements="4" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
+      <file name="MainPage.js" path="C:\Users\olga_peredrii\Work\Sandbox\React\src\components\main-page\MainPage.js">
+        <metrics statements="4" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.movie-card">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="MovieCard.js" path="C:\Users\olga_peredrii\Work\Sandbox\React\src\components\movie-card\MovieCard.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.movie-details">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="MovieDetails.js" path="C:\Users\olga_peredrii\Work\Sandbox\React\src\components\movie-details\MovieDetails.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

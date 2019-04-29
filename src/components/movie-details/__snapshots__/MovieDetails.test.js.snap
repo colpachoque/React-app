@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie Details component should be render correctly 1`] = `
+<div
+  className="movieCard"
+>
+  <div
+    className="movieImg"
+  />
+  <div
+    className="movieInfo"
+  >
+    <div
+      className="name"
+    >
+      The best movie ever
+    </div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+        }
+      }
+    >
+      <div
+        className="year"
+      >
+        1994
+      </div>
+      <div
+        className="genre"
+      >
+         min
+      </div>
+    </div>
+    <div
+      className="description"
+    >
+      The best movie ever
+    </div>
+  </div>
+  <div>
+    <WithStyles(Button)>
+      Search
+    </WithStyles(Button)>
+  </div>
+</div>
+`;
