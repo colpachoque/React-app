@@ -2,11 +2,15 @@ import React from "react";
 import styles from "./MainPage.css";
 import MovieCard from "../movie-card/MovieCard";
 import { getAllMovies } from "../../actions/movies.action";
+import { searchInit } from "../../actions/search.action";
 import { connect } from "react-redux";
 
 class MainPage extends React.Component {
   componentDidMount() {
     this.props.getAllMovies();
+    if (this.props.location.search) {
+      this.props.searchInit(this.props.location.search.split("=")[1]);
+    }
   }
 
   render() {
@@ -57,5 +61,5 @@ const mapStateToProps = state => {
 };
 export default connect(
   mapStateToProps,
-  { getAllMovies }
+  { getAllMovies, searchInit }
 )(MainPage);
