@@ -31,7 +31,7 @@ const Search = props => (
             labelPlacement="start"
           />
           <FormControlLabel
-            value="genre"
+            value="genres"
             control={<Radio color="primary" />}
             label="Genre"
             labelPlacement="start"

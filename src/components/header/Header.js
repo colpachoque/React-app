@@ -3,11 +3,12 @@ import styles from "./Header.css";
 import Search from "../common/Search";
 import Copyright from "../common/Copyright";
 import Results from "../common/Results";
+import { updateSearchBy, searchInit } from "../../actions/search.action";
+import { connect } from "react-redux";
 
 class Header extends React.Component {
   state = {
-    searchText: "",
-    searchBy: "title"
+    searchText: ""
   };
 
   onSearchChange = searchValue => {
@@ -15,11 +16,11 @@ class Header extends React.Component {
   };
 
   onSearch = () => {
-    this.props.onSearch(this.state.searchText);
+    this.props.searchInit(this.state.searchText);
   };
 
   onSearchFilterChange = filterValue => {
-    this.setState({ searchBy: filterValue });
+    this.props.updateSearchBy(filterValue);
   };
 
   render() {
@@ -29,15 +30,21 @@ class Header extends React.Component {
         <Search
           label={"FIND YOUR MOVIE"}
           value={this.state.searchText}
-          searchBy={this.state.searchBy}
+          searchBy={this.props.searchBy}
           onChange={this.onSearchChange}
           onSearch={this.onSearch}
           onSearchFilterChange={this.onSearchFilterChange}
         />
-        <Results info={"10 films found"} />
+        <Results info={`${this.props.moviesFound} films found`} />
       </header>
     );
   }
 }
 
-export default Header;
+const mapStateToProps = ({ search: { searchBy, moviesFound } }) => {
+  return { searchBy, moviesFound };
+};
+export default connect(
+  mapStateToProps,
+  { updateSearchBy, searchInit }
+)(Header);
