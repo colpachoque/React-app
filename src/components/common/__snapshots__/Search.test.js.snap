@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search component should be render correctly 1`] = `
+<div
+  className="search"
+>
+  <div>
+    Tracker
+  </div>
+  <div>
+    <TextField
+      onChange={[Function]}
+      required={false}
+      select={false}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+      value=""
+      variant="standard"
+    />
+  </div>
+  <div
+    className="searchBySection"
+  >
+    <div
+      className="searchByLabel"
+    >
+      SEARCH BY
+    </div>
+    <div
+      className="radioGroup"
+    >
+      <RadioGroup
+        onChange={[Function]}
+        row={true}
+        value="title"
+      >
+        <WithStyles(WithFormControlContext(FormControlLabel))
+          control={
+            <WithStyles(Radio)
+              color="primary"
+            />
+          }
+          label="Title"
+          labelPlacement="start"
+          value="title"
+        />
+        <WithStyles(WithFormControlContext(FormControlLabel))
+          control={
+            <WithStyles(Radio)
+              color="primary"
+            />
+          }
+          label="Genre"
+          labelPlacement="start"
+          value="genre"
+        />
+      </RadioGroup>
+    </div>
+    <WithStyles(Button)
+      onClick={[Function]}
+    >
+      Search
+    </WithStyles(Button)>
+  </div>
+</div>
+`;

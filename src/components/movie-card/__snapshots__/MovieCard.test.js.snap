@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie Card component should be render correctly 1`] = `
+<div
+  className="movieCard"
+>
+  <div
+    className="movieImg"
+  />
+  <div
+    className="movieInfo"
+  >
+    <div
+      className="name"
+    >
+      The best movie ever
+    </div>
+    <div
+      className="year"
+    >
+      1994
+    </div>
+    <div
+      className="genre"
+    >
+      Drama
+    </div>
+  </div>
+</div>
+`;
