@@ -17,6 +17,6 @@ if (process.env.NODE_ENV === "development") {
   app.use(express.static("public"));
 }
 
-// app.use(require('../src/serverRenderer'));
+app.use(require("../src/serverRenderer"));
 
 module.exports = app;

@@ -4,6 +4,7 @@ import { Button } from "@material-ui/core";
 import { connect } from "react-redux";
 import { getMovie } from "../../actions/movies.action";
 import { HashRouter as Router, Route, NavLink, Switch } from "react-router-dom";
+import NotFound from "../not-found/NotFound";
 class MovieDetails extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
@@ -19,7 +20,7 @@ class MovieDetails extends React.Component {
     const { movie } = this.props;
     return (
       <>
-        {this.props.movie && (
+        {this.props.movie ? (
           <div className={styles.movieCard}>
             <div className={styles.movieImg} />
             <div className={styles.movieInfo}>
@@ -36,6 +37,8 @@ class MovieDetails extends React.Component {
               </Button>
             </div>
           </div>
+        ) : (
+          <Route exact path="*" component={NotFound} />
         )}
       </>
     );
