@@ -1,6 +1,6 @@
 const prefix = "http://reactjs-cdp.herokuapp.com";
-const headers = new Headers();
-headers.append("Content-Type", "application/json");
+const headers = {};
+// headers.append("Content-Type", "application/json");
 
 const getMovies = () =>
   fetch(`${prefix}/movies`, headers)

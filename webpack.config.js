@@ -1,12 +1,15 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require("webpack");
 
 module.exports = env => {
   console.log(env);
   return {
+    name: "client",
     context: path.join(__dirname, "src"),
-    entry: "../index.js",
+    entry: [env === "development" && "../index.js"],
     mode: env.dev ? "development" : "production",
     devtool: env.dev ? "source-map" : false,
 
@@ -15,15 +18,19 @@ module.exports = env => {
       path: path.join(__dirname, "dist")
     },
 
-    resolve: {
-      extensions: [".js", ".jsx"]
-    },
+    plugins: [
+      new webpack.HotModuleReplacementPlugin(),
+      new MiniCssExtractPlugin({
+        filename: "css/[name].css"
+      })
+    ],
 
-    // plugins: [
-    //     new HtmlWebpackPlugin({
-    //         template: './index.html',
-    //     }),
-    // ],
+    resolve: {
+      extensions: [".js", ".jsx"],
+      alias: {
+        "react-dom": "@hot-loader/react-dom"
+      }
+    },
 
     module: {
       rules: [
@@ -42,17 +49,33 @@ module.exports = env => {
             }
           ]
         },
+        // {
+        //   test: /\.css$/,
+        //   loader: "style-loader"
+        // },
+        // {
+        //   test: /\.css$/,
+        //   loader: "css-loader",
+        //   query: {
+        //     modules: true,
+        //     localIdentName: "[name]__[local]___[hash:base64:5]"
+        //   }
+        // },
         {
           test: /\.css$/,
-          loader: "style-loader"
-        },
-        {
-          test: /\.css$/,
-          loader: "css-loader",
-          query: {
-            modules: true,
-            localIdentName: "[name]__[local]___[hash:base64:5]"
-          }
+          include: /src/,
+          use: [
+            env === "development"
+              ? "style-loader"
+              : MiniCssExtractPlugin.loader,
+            {
+              loader: "css-loader",
+              options: {
+                modules: true,
+                localIdentName: "[name]"
+              }
+            }
+          ]
         },
         {
           test: /\.(png|jpg|gif)$/,
