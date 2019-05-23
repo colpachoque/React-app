@@ -47,7 +47,7 @@ module.exports = {
             loader: "css-loader/locals",
             options: {
               modules: true,
-              localIdentName: "[name]"
+              localIdentName: "[name]__[local]"
             }
           } // It doesn't embed CSS but only exports the identifier mappings.
         ]

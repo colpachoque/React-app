@@ -33,7 +33,7 @@ function renderHTML(html, preloadedState) {
           <title>React Server Side Rendering</title>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" >
-          <link href="bundle.css" rel="stylesheet" type="text/css">
+          <link href="main.css" rel="stylesheet" type="text/css">
         </head>
         <body>
           <div id="root">${html}</div>

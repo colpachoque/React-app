@@ -21,7 +21,7 @@ module.exports = env => {
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new MiniCssExtractPlugin({
-        filename: "css/[name].css"
+        filename: "main.css"
       })
     ],
 
@@ -65,14 +65,12 @@ module.exports = env => {
           test: /\.css$/,
           include: /src/,
           use: [
-            env === "development"
-              ? "style-loader"
-              : MiniCssExtractPlugin.loader,
+            MiniCssExtractPlugin.loader,
             {
               loader: "css-loader",
               options: {
                 modules: true,
-                localIdentName: "[name]"
+                localIdentName: "[name]__[local]"
               }
             }
           ]
