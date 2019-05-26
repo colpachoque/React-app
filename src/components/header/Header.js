@@ -23,7 +23,7 @@ class Header extends React.Component {
   };
 
   onSearch = () => {
-    this.props.searchInit(this.state.searchText);
+    this.props.searchInit(this.state.searchText, this.props.searchBy);
   };
 
   onSearchFilterChange = filterValue => {

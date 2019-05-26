@@ -3,6 +3,6 @@ import thunk from "redux-thunk";
 import { reducer } from "../reducers/index";
 
 const finalCreateStore = compose(applyMiddleware(thunk))(createStore);
-const store = finalCreateStore(reducer, { movies: { movies: [] } });
+const store = initialState => finalCreateStore(reducer, initialState);
 
 export default store;

@@ -42,7 +42,9 @@ const Search = props => (
       <Button
         onClick={() => {
           console.log(props);
-          props.history.push(`?search=${props.value}`);
+          props.history.push(
+            `?search=${props.value}&searchBy=${props.searchBy}`
+          );
           return props.onSearch();
         }}
       >

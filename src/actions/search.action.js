@@ -13,17 +13,18 @@ export const sortByChanged = sortBy => ({
   sortBy
 });
 
-export const search = searchTerm => ({
+export const search = (searchTerm, searchBy) => ({
   type: SEARCH_INIT,
-  searchTerm
+  searchTerm,
+  searchBy
 });
 
 export const updateSearchBy = searchBy => dispatch => {
   dispatch(searchByChanged(searchBy));
 };
 
-export const searchInit = searchTerm => dispatch => {
-  dispatch(search(searchTerm));
+export const searchInit = (searchTerm, searchBy) => dispatch => {
+  dispatch(search(searchTerm, searchBy));
 };
 
 export const updateSortBy = sortBy => dispatch => {

@@ -5,9 +5,10 @@ import { Provider } from "react-redux";
 import store from "./src/store/store";
 import { BrowserRouter } from "react-router-dom";
 
+const myStore = store(window.PRELOADED_STATE);
 function main() {
   ReactDOM.hydrate(
-    <App Router={BrowserRouter} store={store} />,
+    <App Router={BrowserRouter} store={myStore} />,
     document.getElementById("root")
   );
 }
