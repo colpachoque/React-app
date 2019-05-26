@@ -58,27 +58,31 @@ export default function serverRenderer() {
         searchBy: "genres"
       };
     }
-    const serverStore = store(initialStore);
 
-    renderToString(renderRoot());
-    // context.url will contain the URL to redirect to if a <Redirect> was used
-    if (context.url) {
-      res.writeHead(302, {
-        Location: context.url
-      });
-      res.end();
-      return;
-    }
-
-    // const htmlString = renderToString(renderRoot());
     const paths = {
       css: req.url.includes("movie") ? "../main.css" : "main.css",
       js: req.url.includes("movie") ? "../bundle.js" : "bundle.js"
     };
 
-    const htmlString = renderToString(renderRoot());
-    const preloadedState = serverStore.getState();
+    const serverStore = store(initialStore);
 
-    res.send(renderHTML(htmlString, preloadedState, paths));
+    serverStore.runSaga().done.then(() => {
+      const htmlString = renderToString(renderRoot());
+
+      // context.url will contain the URL to redirect to if a <Redirect> was used
+      if (context.url) {
+        res.writeHead(302, {
+          Location: context.url
+        });
+        res.end();
+        return;
+      }
+      const preloadedState = serverStore.getState();
+      res.send(renderHTML(htmlString, preloadedState, paths));
+    });
+
+    renderToString(renderRoot());
+    store.close();
+    // const htmlString = renderToString(renderRoot());
   };
 }

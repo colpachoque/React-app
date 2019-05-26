@@ -12,7 +12,7 @@ class MovieDetails extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.getMovie(this.props.match.params.id);
   }
 

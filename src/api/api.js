@@ -1,7 +1,7 @@
 const prefix = "http://reactjs-cdp.herokuapp.com";
 const headers = {};
 // headers.append("Content-Type", "application/json");
-
+import "isomorphic-fetch";
 const getMovies = () =>
   fetch(`${prefix}/movies`, headers)
     .then(m => m.json())

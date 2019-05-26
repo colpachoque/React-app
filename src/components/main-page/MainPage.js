@@ -6,7 +6,8 @@ import { searchInit } from "../../actions/search.action";
 import { connect } from "react-redux";
 
 // class MainPage extends React.Component {
-//   componentDidMount() {
+//   componentWillMount() {
+//     console.log('here in will')
 //     this.props.getAllMovies();
 //     if (this.props.location.search) {
 //       this.props.searchInit(this.props.location.search.split("=")[1]);
